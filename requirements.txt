@@ -1,3 +1,6 @@
 pandas==2.2.1
 streamlit==1.32.2
 openpyxl==3.2.0b1
+openrouteservice==2.3.3
+folium==0.15.1
+streamlit-folium==0.18.0
