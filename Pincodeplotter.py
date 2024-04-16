@@ -69,11 +69,11 @@ def mapmaker(output_pincodes):
     geometry = res.json()['routes'][0]['geometry']
     decoded = convert.decode_polyline(geometry)
 
-    distance_txt = "<h4> <b>Distance :&nbsp" + "<strong>"+str(round(res.json()['routes'][0]['summary']['distance']/1000,1))+" Km </strong>" +"</h4></b>"
-    duration_txt = "<h4> <b>Duration :&nbsp" + "<strong>"+str(round(res.json()['routes'][0]['summary']['duration']/60,1))+" Mins. </strong>" +"</h4></b>"
+    #distance_txt = "<h4> <b>Distance :&nbsp" + "<strong>"+str(round(res.json()['routes'][0]['summary']['distance']/1000,1))+" Km </strong>" +"</h4></b>"
+    #duration_txt = "<h4> <b>Duration :&nbsp" + "<strong>"+str(round(res.json()['routes'][0]['summary']['duration']/60,1))+" Mins. </strong>" +"</h4></b>"
 
     m = folium.Map(location=[20.5937,78.9629],zoom_start=5, control_scale=True,tiles="cartodbpositron")
-    folium.GeoJson(decoded).add_child(folium.Popup(distance_txt+duration_txt,max_width=30000)).add_to(m)
+    folium.GeoJson(decoded).add_child(folium.Popup(max_width=30000)).add_to(m)
 
     folium.Marker(
         location=coords[0],
